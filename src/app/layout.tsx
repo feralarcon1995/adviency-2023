@@ -1,20 +1,36 @@
 import type {Metadata} from "next";
 
+import {ToastContainer} from "react-toastify";
+
+import Header from "./components/Header";
 import "./globals.css";
+import Footer from "./components/Footer";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
-  title: "Nextjs Template ",
+  title: "Adviency - ferpy ",
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className="container m-auto grid min-h-screen grid-rows-[auto,1fr,auto] px-4">
-        <header className="text-xl font-bold leading-[3rem]">Nextjs Template</header>
+      <body className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+        <ToastContainer
+          closeOnClick
+          draggable
+          pauseOnFocusLoss
+          pauseOnHover
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          position="bottom-right"
+          rtl={false}
+          theme="dark"
+        />
+        <Header />
         <main className="py-8">{children}</main>
-        <footer className="text-center leading-[3rem] opacity-70">
-          © {new Date().getFullYear()} Nextjs Template
-        </footer>
+        <Footer />
       </body>
     </html>
   );

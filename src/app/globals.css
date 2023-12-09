@@ -7,3 +7,27 @@
   color: CanvasText;
   background-color: Canvas;
 }
+
+body {
+  background:
+    radial-gradient(circle at bottom left, rgba(0, 128, 0, 0.117) 10%, transparent 25%) no-repeat bottom left / 15% 15%,
+    radial-gradient(circle at top right, rgba(255, 0, 0, 0.19) 10%, transparent 25%) no-repeat top right / 40% 15%,
+    #111111;
+  background-size: cover;
+}
+
+.fade-up {
+  animation: fade-up 0.5s ease 1;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
